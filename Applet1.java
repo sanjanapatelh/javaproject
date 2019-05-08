@@ -136,7 +136,10 @@ public void run()
     g.drawString("BG2",450,270);
     g.drawString("BG3",650,270);
     g.drawString(msg,370,320);
-	if(str.equals("requestbus1")){
+	
+	 //for device 2
+	 
+	 if(str.equals("requestbus1")){
       msg="Bus request by DMA2";
 	  
 	  g.setColor(Color.green);
