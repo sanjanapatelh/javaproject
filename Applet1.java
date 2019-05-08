@@ -29,7 +29,7 @@ this.setLayout(null);
    requestbus.setBounds(350,350,100,30);
    requestbus1.setBounds(550,350,100,30);
    requestbus2.setBounds(750,350,100,30);
-   requestbus.addActionListener(this);
+   requestbus.addActionListener(this);//registering event
    requestbus1.addActionListener(this);
    requestbus2.addActionListener(this); 
    // setForeground(Color.RED);
