@@ -321,7 +321,8 @@ public void run()
 			
 			
 			try{t.sleep(5000);}
-      catch(InterruptedException e){}	
+      catch(InterruptedException e){}
+      checkbox1.setState(false);   	  
 		//device release
 		
 		
@@ -352,9 +353,10 @@ public void run()
 		{
 			try{
 			t.join();
-			}
-			catch(InterruptedException e){}
+			
+			
 			checkbox2.setState(false);
+			}catch(InterruptedException e){}
 			try{t.sleep(5000);}
       catch(InterruptedException e){}
 			
@@ -376,6 +378,8 @@ public void run()
 		
 		try{t.sleep(5000);}
       catch(InterruptedException e){}	
+	  
+	  checkbox2.setState(false);   
 		//device 2 release	
 		
 		//device 3 start
@@ -427,13 +431,250 @@ public void run()
 			   g.drawLine(365,150,365,250);//busy1
                g.drawLine(565,150,565,250);//busy2
                g.drawLine(765,150,765,250);//busy3
+			checkbox3.setState(false);   
 		//device 3 release	
 		
 		
 		}
 		
 		
+	else{	//only one device request..
+		//device 1 start
+		
+		if(checkbox1.getState()&&!checkbox2.getState()&&!checkbox3.getState())
+		{
+         
+		 
+		 //get request 1
+			g.setColor(Color.green);
+			g.drawLine(395,200,395,250);//r1
+			g.drawLine(270,200,810,200);//request
+			
+			if(t.isAlive())
+			{
+				try{
+			t.join();
+			}catch(InterruptedException e){}
+			}
+			
+			g.drawLine(270,250,350,250);//bg1
+			sleeptime=f1;
+			try{
+				Thread.sleep(sleeptime);
+			}
+			catch(InterruptedException e){}
+			g.setColor(Color.blue);  //device 1 making busy
+		g.drawLine(365,150,365,250);//busy1
+		
+		try{t.sleep(5000);}
+      catch(InterruptedException e){}
+        g.setColor(Color.red);//making busy
+		g.drawLine(270,150,810,150);//busy line
+		
+         g.drawLine(565,150,565,250);//busy2
+         g.drawLine(765,150,765,250);//busy3
+			
+			
+			if(t.isAlive())
+		{
+			try{
+			t.join();
+			}
+			catch(InterruptedException e){}
+			checkbox1.setState(false);
+			
+			 
+			
 		}
+		
+		try{t.sleep(5000);}
+      catch(InterruptedException e){}
+			 g.setColor(Color.black);//bg1 relese
+			 g.drawLine(270,250,350,250);
+			 g.drawLine(395,200,395,250);
+			 g.drawLine(270,200,810,200);
+			 
+			 
+	   try{t.sleep(5000);}
+      catch(InterruptedException e){}	
+		
+		g.setColor(Color.green);
+			   g.drawLine(270,150,810,150);//busy line
+			   g.drawLine(365,150,365,250);//busy1
+               g.drawLine(565,150,565,250);//busy2
+               g.drawLine(765,150,765,250);//busy3
+			
+			
+			try{t.sleep(5000);}
+      catch(InterruptedException e){}	
+	  
+	 checkbox1.setState(false);
+	    } 
+	  
+		
+		
+		//device 1 completed
+		
+		
+		
+		//for device 2
+		if(!checkbox1.getState()&&(checkbox2.getState())&&(!checkbox3.getState()))
+		{
+			
+			
+			//get request 1
+			g.setColor(Color.green);
+			g.drawLine(595,200,595,250);//r2
+			g.drawLine(270,200,810,200);//request
+			
+			if(t.isAlive())
+			{
+				try{
+			t.join();
+			}catch(InterruptedException e){}
+			}
+			
+			g.drawLine(270,250,350,250);//bg1
+			g.drawLine(410,250,550,250);//bg2
+			sleeptime=f2;
+			try{
+				Thread.sleep(sleeptime);
+			}
+			catch(InterruptedException e){}
+			g.setColor(Color.blue);  //device 2 making busy
+		g.drawLine(565,150,565,250);//busy2
+		
+		try{t.sleep(5000);}
+      catch(InterruptedException e){}
+        g.setColor(Color.red);//making busy
+		g.drawLine(270,150,810,150);//busy line
+		
+         g.drawLine(365,150,365,250);//busy1
+         g.drawLine(765,150,765,250);//busy3
+			
+			
+			if(t.isAlive())
+		{
+			try{
+			t.join();
+			}
+			catch(InterruptedException e){}
+			checkbox1.setState(false);
+			
+			 
+			
+		}
+		
+		try{t.sleep(5000);}
+      catch(InterruptedException e){}
+			 g.setColor(Color.black);//bg2 relese
+			 g.drawLine(270,250,350,250);//bg1
+			 g.drawLine(410,250,550,250);//bg2
+			 g.drawLine(595,200,595,250);//r2
+			 g.drawLine(270,200,810,200);//request
+			 
+			 
+	   try{t.sleep(5000);}
+      catch(InterruptedException e){}	
+		
+		g.setColor(Color.green);
+			   g.drawLine(270,150,810,150);//busy line
+			   g.drawLine(365,150,365,250);//busy1
+               g.drawLine(565,150,565,250);//busy2
+               g.drawLine(765,150,765,250);//busy3
+			
+			
+			try{t.sleep(5000);}
+      catch(InterruptedException e){}	
+			checkbox2.setState(false);
+		}
+		//device 2 completed
+		
+		
+		
+	  
+     //device3 start
+	 
+	 
+	  if(!checkbox1.getState()&&(!checkbox2.getState())&&(checkbox3.getState()))
+		{
+			
+			
+			//get request 3
+			g.setColor(Color.green);
+			g.drawLine(795,200,795,250);//r3
+			g.drawLine(270,200,810,200);//request
+			
+			if(t.isAlive())
+			{
+				try{
+			t.join();
+			}catch(InterruptedException e){}
+			}
+			
+			g.drawLine(270,250,350,250);//bg1
+			g.drawLine(410,250,550,250);//bg2
+			g.drawLine(610,250,750,250);//bg3
+			sleeptime=f3;
+			try{
+				Thread.sleep(sleeptime);
+			}
+			catch(InterruptedException e){}
+			g.setColor(Color.blue);  //device 3 making busy
+		g.drawLine(765,150,765,250);//busy3
+		
+		try{t.sleep(5000);}
+      catch(InterruptedException e){}
+        g.setColor(Color.red);//making busy
+		g.drawLine(270,150,810,150);//busy line
+		
+         g.drawLine(365,150,365,250);//busy1
+         g.drawLine(565,150,565,250);//busy2
+			
+			
+			if(t.isAlive())
+		{
+			try{
+			t.join();
+			}
+			catch(InterruptedException e){}
+			checkbox1.setState(false);
+			
+			 
+			
+		}
+		
+		try{t.sleep(5000);}
+      catch(InterruptedException e){}
+			 g.setColor(Color.black);//bg3 relese
+			 g.drawLine(270,250,350,250);//bg1
+			 g.drawLine(410,250,550,250);//bg2
+			 g.drawLine(610,250,750,250);//bg3
+			 g.drawLine(795,200,795,250);//r3
+			 g.drawLine(270,200,810,200);//request
+			 
+			 
+	   try{t.sleep(5000);}
+      catch(InterruptedException e){}	
+		
+		g.setColor(Color.green);
+			   g.drawLine(270,150,810,150);//busy line
+			   g.drawLine(365,150,365,250);//busy1
+               g.drawLine(565,150,565,250);//busy2
+               g.drawLine(765,150,765,250);//busy3
+			
+			
+			try{t.sleep(5000);}
+      catch(InterruptedException e){}	
+			
+			checkbox3.setState(false);
+		}
+	  //device 3 finish
+		
+	}	
+		
+		
+}
 		
 	  
 	  
