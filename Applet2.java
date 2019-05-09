@@ -4,11 +4,11 @@ import java.applet.*;
 import java.awt.Graphics;
 import javax.swing.*;
 import java.awt.Label;
-/* <applet code="Applet2" width=1500 height=810></applet>*/
-public class Applet2 extends Applet implements Runnable, ActionListener,ItemListener{
+/* <applet code="layout1" width=1500 height=810></applet>*/
+public class layout1 extends Applet implements Runnable, ActionListener,ItemListener{
   String msg="";
-  String t,str1,str2,str3;
-  long sleeptime,f1,f2,f3;
+  String str1,str2,str3;
+  long f1,f2,f3;
   Graphics gc;
   Button requestbus;
   Button requestbus1;
@@ -26,14 +26,7 @@ public class Applet2 extends Applet implements Runnable, ActionListener,ItemList
   long sleeptime=10000;
 
    public void init(){
-   str1=t1.getText();
-   f1=Long.valueOf(str1);
-  
-   str2=t2.getText();
-   f2=Long.valueOf(str2);
    
-   str3=t3.getText();
-  f3=Long.valueOf(str3);
    this.setLayout(null);
    requestbus=new Button("requestbus");
    requestbus1=new Button("requestbus1");
@@ -115,6 +108,7 @@ public void run()
  public void actionPerformed(ActionEvent ae){
     str=ae.getActionCommand();
 	
+	
     if(str.equals("requestbus")){
       //setBackground(Color.blue);
       msg="Bus request by DMA1";
@@ -143,6 +137,25 @@ public void run()
      requestbus.setBackground(Color.lightGray);
       requestbus1.setBackground(Color.lightGray);
       requestbus2.setBackground(Color.pink);}
+	  
+  
+	if(t1.getText()!=null||t2.getText()!=null||t3.getText()!=null)
+	{
+		  //textfeild
+	str1=t1.getText();
+   f1=Long.valueOf(str1);
+  
+   str2=t2.getText();
+   f2=Long.valueOf(str2);
+   
+   str3=t3.getText();
+  f3=Long.valueOf(str3);
+	
+	}
+	
+	
+	
+	  
     repaint();
 }
  
@@ -237,4 +250,3 @@ public void stop()
 }
 
 }
-
