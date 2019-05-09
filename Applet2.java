@@ -70,7 +70,7 @@ public class layout1 extends Applet implements Runnable, ActionListener,ItemList
 
    // setForeground(Color.RED);
    //System.out.println("this is in init function");
-   setBackground(Color.WHITE);
+   setBackground(Color.gray);
 }
 //start function for thread
 
