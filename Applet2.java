@@ -99,7 +99,6 @@ public void run()
   }
 }
  public void itemStateChanged(ItemEvent ie){
- repaint();
 }
 
 
