@@ -7,6 +7,8 @@ import java.awt.Label;
 /* <applet code="Applet2" width=1500 height=810></applet>*/
 public class Applet2 extends Applet implements Runnable, ActionListener,ItemListener{
   String msg="";
+  String t,str1,str2,str3;
+  long sleeptime,f1,f2,f3;
   Graphics gc;
   Button requestbus;
   Button requestbus1;
@@ -24,7 +26,14 @@ public class Applet2 extends Applet implements Runnable, ActionListener,ItemList
   long sleeptime=10000;
 
    public void init(){
+   str1=t1.getText();
+   f1=Long.valueOf(str1);
+  
+   str2=t2.getText();
+   f2=Long.valueOf(str2);
    
+   str3=t3.getText();
+  f3=Long.valueOf(str3);
    this.setLayout(null);
    requestbus=new Button("requestbus");
    requestbus1=new Button("requestbus1");
